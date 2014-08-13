@@ -3,13 +3,12 @@ require 'sinatra/redirect_with_flash'
 require 'sinatra'
 require 'sinatra/activerecord'
 require './environments'
-enable :sessions
+set :sessions, true
 use Rack::Flash
 
 class Post < ActiveRecord::Base
   validates :title, presence: true, length: { minimum: 5 }
   validates :body, presence: true
-
 end
 
 get "/" do 
@@ -28,9 +27,14 @@ helpers do
   end
 end
 
+helpers do
+  include Rack::Utils
+  alias_method :h, :escape_html
+end
+
 # get ALL posts
 get "/" do 
-  @posts = Posts.order("created_at DESC")
+  @posts = Post.order("created_at DESC")
   @title = "Welcome."
   erb :"posts/index"
 end

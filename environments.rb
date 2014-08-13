@@ -1,5 +1,5 @@
 configure :development do 
-  set :database, 'sqlite3:///dev.db' # <--- This way will be deprecated, use 'sqlite3:dev.db' going forward
+  set :database, 'sqlite3:dev.db' # <--- This way will be deprecated, use 'sqlite3:dev.db' going forward
   set :show_exceptions, true
 end
 
