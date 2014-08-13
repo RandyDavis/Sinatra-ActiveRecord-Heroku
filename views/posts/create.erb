@@ -1,0 +1,15 @@
+<h2></h2>
+<br>
+<form action="">
+  <div class="form-group">
+    <label for="post_title">Title:</label>
+    <br>
+    <input id="post_title" class="form-control" name="post[title]" type="text" value="<%= @post_title %>" style="width=90%">
+  </div>
+  <div>
+    <label for="post_body">Body:</label>
+    <br>
+    <textarea name="" id="post_body" name="post[body]" class="form-control" cols="30" rows="10"><%= @post.body %></textarea>
+  </div>
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>

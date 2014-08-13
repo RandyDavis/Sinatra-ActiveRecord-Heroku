@@ -4,7 +4,7 @@ ruby "2.0.0"
 gem "sinatra"
 gem "activerecord"
 gem "sinatra-activerecord"
-gem "sinatra-flash"
+gem "rack-flash3"
 gem "sinatra-redirect-with-flash"
 
 group :development do
