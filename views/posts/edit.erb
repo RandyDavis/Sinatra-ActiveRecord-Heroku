@@ -1,0 +1,16 @@
+<h2>Edit Post</h2>
+<br>
+<form action="/posts/<%= @post.id %>" method="post">
+  <div class="form-group">
+    <input type="hidden" name="_method" value="put">
+    <label for="post_title">Title:</label>
+    <br>
+    <input type="text" id="post_title" class="form-control" name="post[title]" value="<%= @post.title %>">
+  </div>
+  <div class="form-group">
+    <label for="post_body">Body:</label>
+    <br>
+    <textarea class="form-control" name="post[body]" id="post_body" cols="30" rows="5"><%= @post.body %></textarea>
+  </div>
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>
